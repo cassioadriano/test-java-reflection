@@ -7,7 +7,7 @@ import lombok.With;
 @Builder
 @With
 @Data
-public class ParaNextiaField {
+public class ParaExternalField {
     String id;
     Object valor;
     Integer index;

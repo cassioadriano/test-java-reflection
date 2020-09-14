@@ -11,7 +11,7 @@ public class Main {
         Pessoa pessoa = criarPessoaTeste();
         List<ConfiguracaoDePara> configuracaoDePara = recuperarConfiguracoes();
 
-        List<ParaNextiaField> listaFields = new ArrayList<>();
+        List<ParaExternalField> listaFields = new ArrayList<>();
 
         configuracaoDePara.stream().forEach(c-> {
             String[] de = c.getDe().split("\\.");
@@ -22,7 +22,7 @@ public class Main {
                     for (int index = 0; listObject.size() > index; index++) {
                         Object objectItem = listObject.get(index);
                         listaFields.add(
-                                ParaNextiaField.builder()
+                                ParaExternalField.builder()
                                 .id(c.getPara())
                                 .valor(getPropertyValue(objectItem, deI))
                                 .index(index + 1)
@@ -33,7 +33,7 @@ public class Main {
                 }
             }
             if (!List.class.isAssignableFrom(resultObject.getClass())) {
-                listaFields.add(ParaNextiaField.builder()
+                listaFields.add(ParaExternalField.builder()
                         .id(c.getPara())
                         .valor(resultObject)
                         .index(0)

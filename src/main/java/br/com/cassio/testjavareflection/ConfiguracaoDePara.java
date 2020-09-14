@@ -10,5 +10,4 @@ import lombok.With;
 public class ConfiguracaoDePara {
     String de;
     String para;
-    String listDeProperty;
 }
